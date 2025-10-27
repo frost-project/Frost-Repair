@@ -1,5 +1,5 @@
 /*
-  Copyright 2021 - 2022 Spider-Admin@Z+d9Knmjd3hQeeZU6BOWPpAAxxs
+  Copyright 2021 - 2025 Spider-Admin@Z+d9Knmjd3hQeeZU6BOWPpAAxxs
 
   Licensed under the Apache License, Version 2.0 (the "License");
   you may not use this file except in compliance with the License.
@@ -17,11 +17,16 @@
 package org.frost.repair;
 
 import java.io.IOException;
+import java.nio.file.Path;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 public class Main {
+
+	static {
+		AppHome.init();
+	}
 
 	private static final Logger log = LoggerFactory.getLogger(Main.class);
 
@@ -40,6 +45,10 @@ public class Main {
 		try {
 			if (args.length >= 1) {
 				String frostPath = args[0];
+
+				Path appHome = Path.of(System.getProperty(AppHome.APP_HOME));
+				frostPath = appHome.resolve(frostPath).normalize().toString();
+
 				FrostRepair frostRepair = new FrostRepair();
 				frostRepair.repair(frostPath);
 			} else {

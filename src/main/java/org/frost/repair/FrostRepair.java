@@ -1,6 +1,6 @@
 package org.frost.repair;
 /*
-  Copyright 2021 - 2023 Spider-Admin@Z+d9Knmjd3hQeeZU6BOWPpAAxxs
+  Copyright 2021 - 2025 Spider-Admin@Z+d9Knmjd3hQeeZU6BOWPpAAxxs
 
   Licensed under the Apache License, Version 2.0 (the "License");
   you may not use this file except in compliance with the License.
@@ -60,9 +60,7 @@ public class FrostRepair {
 	}
 
 	private void copyFileToTemp(Path source) throws IOException {
-		String tempDir = getTempDir();
-
-		Path destination = Paths.get(tempDir, source.getFileName().toString());
+		Path destination = Paths.get(getTempDir(), source.getFileName().toString());
 		destination.toFile().deleteOnExit();
 
 		log.info("Copy {} to temporary folder...", source.getFileName());
