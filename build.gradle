@@ -22,7 +22,7 @@ application {
 
 dependencies {
 	implementation("org.slf4j:slf4j-api:2.0.17")
-	implementation("ch.qos.logback:logback-core:1.5.19")
-	implementation("ch.qos.logback:logback-classic:1.5.19")
-	implementation("com.github.Spider-Admin:Perst:v4.40.0")
+	implementation("ch.qos.logback:logback-core:1.5.23")
+	implementation("ch.qos.logback:logback-classic:1.5.23")
+	implementation("com.github.frost-project:Perst:v4.40.0")
 }
